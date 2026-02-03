@@ -14,8 +14,6 @@ The source code associated with this work is currently being prepared for public
 
 At this stage, the full implementation is not yet available in this repository due to ongoing code cleanup and documentation polishing.
 
-The complete and well-documented codebase will be **released upon acceptance of the paper**.
-
 ---
 
 ## 📄 Paper

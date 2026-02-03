@@ -10,9 +10,9 @@ arXiv preprint: https://arxiv.org/abs/2601.12971
 ---
 ## 🔔 Code Availability
 
-The source code associated with this work is currently being prepared for public release.
+The official implementation of ACR-PINN is publicly available in this repository.
 
-At this stage, the full implementation is not yet available in this repository due to ongoing code cleanup and documentation polishing.
+The code includes the network architectures with attentive representations, conflict-resolved optimization strategies, and scripts for reproducing the main numerical results reported in the paper.
 
 ---
 

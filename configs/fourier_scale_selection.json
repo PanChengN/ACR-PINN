@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "experiment_id": "acr-pinn-fourier-scale-selection-v1",
+  "result_prefix": "fourier_scale_",
+  "training_policy": {
+    "learning_rate": 0.001,
+    "lr_schedule": "linear_warmup_then_cosine",
+    "lr_min": 0.0001,
+    "warmup_epochs": 100,
+    "checkpoint_policy": "fixed_final_iteration",
+    "sampling_policy": "fixed_training_points"
+  },
+  "seed_policy": {
+    "master_seed_base": 18018,
+    "init_seed_offset": 0,
+    "sample_seed_offset": 1000,
+    "optimizer_order_seed_offset": 2000,
+    "paired_runs": 1,
+    "role": "preliminary_selection_only"
+  },
+  "selection_rule": {
+    "candidates": [1.0, 5.0],
+    "metric": "final_relative_l2",
+    "aggregation": "mean_rank_across_burgers_and_helmholtz_4_4",
+    "active_problems": ["burgers", "helmholtz_4_4"],
+    "tie_break": "smaller_scale",
+    "formal_seed_set": [19018, 19019, 19020, 19021, 19022]
+  },
+  "problems": {
+    "burgers_scale_1": {
+      "script": "burgers/train.py", "epochs": 8000, "record_every": 400,
+      "environment": {"BURGERS_NUM_F": 20000, "BURGERS_NUM_B": 500, "BURGERS_NUM_IC": 500, "BURGERS_DYNAMIC_SAMPLING": 0, "BURGERS_BOUNDARY_COUNT_IS_TOTAL": 1, "FOURIER_FEATURE_COUNT": 50, "FOURIER_SCALE": 1.0}
+    },
+    "burgers_scale_5": {
+      "script": "burgers/train.py", "epochs": 8000, "record_every": 400,
+      "environment": {"BURGERS_NUM_F": 20000, "BURGERS_NUM_B": 500, "BURGERS_NUM_IC": 500, "BURGERS_DYNAMIC_SAMPLING": 0, "BURGERS_BOUNDARY_COUNT_IS_TOTAL": 1, "FOURIER_FEATURE_COUNT": 50, "FOURIER_SCALE": 5.0}
+    },
+    "helmholtz_4_4_scale_1": {
+      "script": "helmholtz/train.py", "epochs": 20000, "record_every": 1000,
+      "environment": {"HELMHOLTZ_A1": 4.0, "HELMHOLTZ_A2": 4.0, "HELMHOLTZ_K": 1.0, "HELMHOLTZ_NUM_F": 20000, "HELMHOLTZ_NUM_B": 400, "HELMHOLTZ_DYNAMIC_SAMPLING": 0, "FOURIER_FEATURE_COUNT": 50, "FOURIER_SCALE": 1.0}
+    },
+    "helmholtz_4_4_scale_5": {
+      "script": "helmholtz/train.py", "epochs": 20000, "record_every": 1000,
+      "environment": {"HELMHOLTZ_A1": 4.0, "HELMHOLTZ_A2": 4.0, "HELMHOLTZ_K": 1.0, "HELMHOLTZ_NUM_F": 20000, "HELMHOLTZ_NUM_B": 400, "HELMHOLTZ_DYNAMIC_SAMPLING": 0, "FOURIER_FEATURE_COUNT": 50, "FOURIER_SCALE": 5.0}
+    },
+    "klein_gordon_scale_1": {
+      "script": "klein_gordon/train.py", "epochs": 20000, "record_every": 1000,
+      "environment": {"KLEIN_GORDON_NUM_F": 10000, "KLEIN_GORDON_NUM_B": 200, "KLEIN_GORDON_NUM_IC": 200, "KLEIN_GORDON_DYNAMIC_SAMPLING": 0, "FOURIER_FEATURE_COUNT": 50, "FOURIER_SCALE": 1.0}
+    },
+    "klein_gordon_scale_5": {
+      "script": "klein_gordon/train.py", "epochs": 20000, "record_every": 1000,
+      "environment": {"KLEIN_GORDON_NUM_F": 10000, "KLEIN_GORDON_NUM_B": 200, "KLEIN_GORDON_NUM_IC": 200, "KLEIN_GORDON_DYNAMIC_SAMPLING": 0, "FOURIER_FEATURE_COUNT": 50, "FOURIER_SCALE": 5.0}
+    }
+  }
+}

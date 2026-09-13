@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "manifest_id": "acr-pinn-helmholtz-4-4-v1",
+  "config": "configs/helmholtz_4_4.json",
+  "jobs": [
+    {"problem": "helmholtz_4_4", "architecture": "mlp", "optimizer": "sum"},
+    {"problem": "helmholtz_4_4", "architecture": "mlp", "optimizer": "pcgrad"},
+    {"problem": "helmholtz_4_4", "architecture": "lda", "optimizer": "sum"},
+    {"problem": "helmholtz_4_4", "architecture": "lda", "optimizer": "pcgrad"}
+  ]
+}

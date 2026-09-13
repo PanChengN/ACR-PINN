@@ -1,0 +1,38 @@
+# Python caches and environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+
+# Editors and operating systems
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# ACR-PINN generated artifacts
+generated_data/
+analysis_outputs/
+results/
+results_*/
+**/results_*/
+run_logs/
+*.pt
+*.pth
+*.ckpt
+*.npy
+*.npz
+*.log
+nohup.out
+slurm-*.out
+
+# Local packages and archives
+build/
+dist/
+*.egg-info/
+*.tar
+*.tar.gz
+*.zip

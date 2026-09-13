@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "experiment_id": "acr-pinn-helmholtz-4-4-v1",
+  "result_prefix": "core_helmholtz_4_4_",
+  "training_policy": {
+    "learning_rate": 0.001,
+    "lr_schedule": "linear_warmup_then_cosine",
+    "lr_min": 0.0001,
+    "warmup_epochs": 100,
+    "checkpoint_policy": "fixed_final_iteration"
+  },
+  "seed_policy": {
+    "master_seed_base": 19018,
+    "init_seed_offset": 0,
+    "sample_seed_offset": 1000,
+    "optimizer_order_seed_offset": 2000,
+    "paired_runs": 5
+  },
+  "architectures": ["mlp", "lda"],
+  "optimizer_strategies": ["sum", "pcgrad"],
+  "problems": {
+    "helmholtz_4_4": {
+      "script": "helmholtz/train.py",
+      "layers": [2, 50, 50, 50, 50, 1],
+      "epochs": 100000,
+      "record_every": 1000,
+      "environment": {
+        "HELMHOLTZ_A1": 4.0,
+        "HELMHOLTZ_A2": 4.0,
+        "HELMHOLTZ_K": 1.0,
+        "HELMHOLTZ_NUM_F": 20000,
+        "HELMHOLTZ_NUM_B": 400,
+        "HELMHOLTZ_DYNAMIC_SAMPLING": 1,
+        "HELMHOLTZ_RESAMPLE_EVERY": 1,
+        "WARMUP_EPOCHS": 100
+      },
+      "samples": {
+        "residual": 20000,
+        "boundary": 400
+      }
+    }
+  }
+}

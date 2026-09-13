@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "manifest_id": "acr-pinn-schrodinger-v1",
+  "config": "configs/schrodinger.json",
+  "jobs": [
+    {"problem": "schrodinger", "architecture": "mlp", "optimizer": "sum"},
+    {"problem": "schrodinger", "architecture": "mlp", "optimizer": "pcgrad"},
+    {"problem": "schrodinger", "architecture": "lda", "optimizer": "sum"},
+    {"problem": "schrodinger", "architecture": "lda", "optimizer": "pcgrad"}
+  ]
+}

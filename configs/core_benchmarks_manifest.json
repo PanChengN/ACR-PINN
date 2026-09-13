@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "manifest_id": "acr-pinn-core-benchmarks-v1",
+  "config": "configs/core_benchmarks.json",
+  "jobs": [
+    {"problem": "helmholtz_1_4", "architecture": "mlp", "optimizer": "sum"},
+    {"problem": "helmholtz_1_4", "architecture": "mlp", "optimizer": "pcgrad"},
+    {"problem": "helmholtz_1_4", "architecture": "lda", "optimizer": "sum"},
+    {"problem": "helmholtz_1_4", "architecture": "lda", "optimizer": "pcgrad"},
+    {"problem": "klein_gordon", "architecture": "mlp", "optimizer": "sum"},
+    {"problem": "klein_gordon", "architecture": "mlp", "optimizer": "pcgrad"},
+    {"problem": "klein_gordon", "architecture": "lda", "optimizer": "sum"},
+    {"problem": "klein_gordon", "architecture": "lda", "optimizer": "pcgrad"},
+    {"problem": "lid_driven_cavity", "architecture": "mlp", "optimizer": "sum"},
+    {"problem": "lid_driven_cavity", "architecture": "mlp", "optimizer": "pcgrad"},
+    {"problem": "lid_driven_cavity", "architecture": "lda", "optimizer": "sum"},
+    {"problem": "lid_driven_cavity", "architecture": "lda", "optimizer": "pcgrad"}
+  ]
+}

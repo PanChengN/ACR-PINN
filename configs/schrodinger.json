@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "experiment_id": "acr-pinn-schrodinger-v1",
+  "result_prefix": "core_",
+  "training_policy": {
+    "learning_rate": 0.001,
+    "lr_schedule": "linear_warmup_then_cosine",
+    "lr_min": 0.0001,
+    "warmup_epochs": 100,
+    "checkpoint_policy": "fixed_final_iteration"
+  },
+  "seed_policy": {
+    "master_seed_base": 19018,
+    "init_seed_offset": 0,
+    "sample_seed_offset": 1000,
+    "optimizer_order_seed_offset": 2000,
+    "paired_runs": 5
+  },
+  "architectures": ["mlp", "lda"],
+  "optimizer_strategies": ["sum", "pcgrad"],
+  "problems": {
+    "schrodinger": {
+      "script": "schrodinger/train.py",
+      "layers": [2, 50, 50, 50, 50, 2],
+      "epochs": 100000,
+      "record_every": 1000,
+      "environment": {
+        "SCHRODINGER_NUM_F": 20000,
+        "SCHRODINGER_NUM_B": 500,
+        "SCHRODINGER_NUM_IC": 500,
+        "SCHRODINGER_RESAMPLE_EVERY": 1,
+        "WARMUP_EPOCHS": 100
+      },
+      "samples": {"residual": 20000, "boundary": 500, "initial": 500}
+    }
+  }
+}

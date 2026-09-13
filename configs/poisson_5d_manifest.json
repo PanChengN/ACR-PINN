@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "manifest_id": "acr-pinn-poisson-5d-v1",
+  "config": "configs/poisson_5d.json",
+  "jobs": [
+    {"problem": "poisson_5d", "architecture": "mlp", "optimizer": "sum"},
+    {"problem": "poisson_5d", "architecture": "mlp", "optimizer": "pcgrad"},
+    {"problem": "poisson_5d", "architecture": "lda", "optimizer": "sum"},
+    {"problem": "poisson_5d", "architecture": "lda", "optimizer": "pcgrad"}
+  ]
+}

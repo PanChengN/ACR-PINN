@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "manifest_id": "acr-pinn-fourier-scale-selection-v1",
+  "config": "configs/fourier_scale_selection.json",
+  "jobs": [
+    {"problem": "burgers_scale_1", "architecture": "fourier_mlp", "optimizer": "sum", "result_tag": "baseline_ff_burgers_scale1"},
+    {"problem": "burgers_scale_5", "architecture": "fourier_mlp", "optimizer": "sum", "result_tag": "baseline_ff_burgers_scale5"},
+    {"problem": "helmholtz_4_4_scale_1", "architecture": "fourier_mlp", "optimizer": "sum", "result_tag": "baseline_ff_h44_scale1"},
+    {"problem": "helmholtz_4_4_scale_5", "architecture": "fourier_mlp", "optimizer": "sum", "result_tag": "baseline_ff_h44_scale5"},
+    {"problem": "klein_gordon_scale_1", "architecture": "fourier_mlp", "optimizer": "sum", "result_tag": "baseline_ff_kg_scale1"},
+    {"problem": "klein_gordon_scale_5", "architecture": "fourier_mlp", "optimizer": "sum", "result_tag": "baseline_ff_kg_scale5"}
+  ]
+}

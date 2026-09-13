@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "manifest_id": "acr-pinn-lda-ablation-v1",
+  "config": "configs/lda_ablation.json",
+  "jobs": [
+    {"problem": "burgers", "architecture": "mlp_param_matched", "optimizer": "sum"},
+    {"problem": "burgers", "architecture": "direct_coordinate", "optimizer": "sum"},
+    {"problem": "burgers", "architecture": "single_encoder_residual", "optimizer": "sum"},
+    {"problem": "burgers", "architecture": "fixed_average", "optimizer": "sum"},
+    {"problem": "burgers", "architecture": "static_gate", "optimizer": "sum"},
+    {"problem": "helmholtz_4_4", "architecture": "mlp_param_matched", "optimizer": "sum"},
+    {"problem": "helmholtz_4_4", "architecture": "direct_coordinate", "optimizer": "sum"},
+    {"problem": "helmholtz_4_4", "architecture": "single_encoder_residual", "optimizer": "sum"},
+    {"problem": "helmholtz_4_4", "architecture": "fixed_average", "optimizer": "sum"},
+    {"problem": "helmholtz_4_4", "architecture": "static_gate", "optimizer": "sum"},
+    {"problem": "klein_gordon", "architecture": "mlp_param_matched", "optimizer": "sum"},
+    {"problem": "klein_gordon", "architecture": "direct_coordinate", "optimizer": "sum"},
+    {"problem": "klein_gordon", "architecture": "single_encoder_residual", "optimizer": "sum"},
+    {"problem": "klein_gordon", "architecture": "fixed_average", "optimizer": "sum"},
+    {"problem": "klein_gordon", "architecture": "static_gate", "optimizer": "sum"}
+  ]
+}

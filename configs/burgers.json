@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "experiment_id": "acr-pinn-burgers-v1",
+  "result_prefix": "core_burgers_",
+  "training_policy": {
+    "learning_rate": 0.001,
+    "lr_schedule": "linear_warmup_then_cosine",
+    "lr_min": 0.0001,
+    "warmup_epochs": 100,
+    "checkpoint_policy": "fixed_final_iteration"
+  },
+  "seed_policy": {
+    "master_seed_base": 19018,
+    "init_seed_offset": 0,
+    "sample_seed_offset": 1000,
+    "optimizer_order_seed_offset": 2000,
+    "paired_runs": 5
+  },
+  "architectures": ["mlp", "lda"],
+  "optimizer_strategies": ["sum", "pcgrad"],
+  "problems": {
+    "burgers": {
+      "script": "burgers/train.py",
+      "layers": [2, 50, 50, 50, 50, 1],
+      "epochs": 40000,
+      "record_every": 300,
+      "environment": {
+        "BURGERS_NUM_F": 20000,
+        "BURGERS_NUM_B": 500,
+        "BURGERS_NUM_IC": 500,
+        "BURGERS_DYNAMIC_SAMPLING": 1,
+        "BURGERS_BOUNDARY_COUNT_IS_TOTAL": 1,
+        "BURGERS_RESAMPLE_EVERY": 1,
+        "WARMUP_EPOCHS": 100
+      },
+      "samples": {
+        "residual": 20000,
+        "boundary_total": 500,
+        "initial": 500
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "manifest_id": "fixed-core-v1",
+  "config": "configs/representative_baselines.json",
+  "jobs": [
+    {"problem": "burgers", "architecture": "mlp", "optimizer": "sum", "result_tag": "fixed_core_burgers_std"},
+    {"problem": "burgers", "architecture": "mlp", "optimizer": "pcgrad", "result_tag": "fixed_core_burgers_gc"},
+    {"problem": "burgers", "architecture": "lda", "optimizer": "sum", "result_tag": "fixed_core_burgers_lda"},
+    {"problem": "burgers", "architecture": "lda", "optimizer": "pcgrad", "result_tag": "fixed_core_burgers_acr"},
+    {"problem": "helmholtz_4_4", "architecture": "mlp", "optimizer": "sum", "result_tag": "fixed_core_h44_std"},
+    {"problem": "helmholtz_4_4", "architecture": "mlp", "optimizer": "pcgrad", "result_tag": "fixed_core_h44_gc"},
+    {"problem": "helmholtz_4_4", "architecture": "lda", "optimizer": "sum", "result_tag": "fixed_core_h44_lda"},
+    {"problem": "helmholtz_4_4", "architecture": "lda", "optimizer": "pcgrad", "result_tag": "fixed_core_h44_acr"}
+  ]
+}

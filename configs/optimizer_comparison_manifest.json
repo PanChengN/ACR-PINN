@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "manifest_id": "optimizer-comparison-v1",
+  "config": "configs/optimizer_comparison.json",
+  "jobs": [
+    {"problem": "burgers", "architecture": "mlp", "optimizer": "sum", "result_tag": "optimizer_burgers_sum"},
+    {"problem": "burgers", "architecture": "mlp", "optimizer": "pcgrad", "result_tag": "optimizer_burgers_pcgrad"},
+    {"problem": "burgers", "architecture": "mlp", "optimizer": "mgda", "result_tag": "optimizer_burgers_mgda"},
+    {"problem": "burgers", "architecture": "mlp", "optimizer": "gradnorm", "result_tag": "optimizer_burgers_gradnorm"},
+    {"problem": "burgers", "architecture": "mlp", "optimizer": "ntk", "result_tag": "optimizer_burgers_ntk"},
+    {"problem": "helmholtz_4_4", "architecture": "mlp", "optimizer": "sum", "result_tag": "optimizer_helmholtz_4_4_sum"},
+    {"problem": "helmholtz_4_4", "architecture": "mlp", "optimizer": "pcgrad", "result_tag": "optimizer_helmholtz_4_4_pcgrad"},
+    {"problem": "helmholtz_4_4", "architecture": "mlp", "optimizer": "mgda", "result_tag": "optimizer_helmholtz_4_4_mgda"},
+    {"problem": "helmholtz_4_4", "architecture": "mlp", "optimizer": "gradnorm", "result_tag": "optimizer_helmholtz_4_4_gradnorm"},
+    {"problem": "helmholtz_4_4", "architecture": "mlp", "optimizer": "ntk", "result_tag": "optimizer_helmholtz_4_4_ntk"}
+  ]
+}

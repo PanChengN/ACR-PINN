@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "manifest_id": "acr-pinn-burgers-v1",
+  "config": "configs/burgers.json",
+  "jobs": [
+    {"problem": "burgers", "architecture": "mlp", "optimizer": "sum"},
+    {"problem": "burgers", "architecture": "mlp", "optimizer": "pcgrad"},
+    {"problem": "burgers", "architecture": "lda", "optimizer": "sum"},
+    {"problem": "burgers", "architecture": "lda", "optimizer": "pcgrad"}
+  ]
+}

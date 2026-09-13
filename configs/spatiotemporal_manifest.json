@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "manifest_id": "acr-pinn-spatiotemporal-v1",
+  "config": "configs/spatiotemporal.json",
+  "jobs": [
+    {"problem": "klein_gordon_t1", "architecture": "mlp", "optimizer": "sum", "result_tag": "spatiotemporal_t1_std"},
+    {"problem": "klein_gordon_t1", "architecture": "mlp", "optimizer": "pcgrad", "result_tag": "spatiotemporal_t1_gcr"},
+    {"problem": "klein_gordon_t1", "architecture": "lda", "optimizer": "sum", "result_tag": "spatiotemporal_t1_lda"},
+    {"problem": "klein_gordon_t1", "architecture": "lda", "optimizer": "pcgrad", "result_tag": "spatiotemporal_t1_acr"},
+    {"problem": "klein_gordon_t1", "architecture": "separate_st_lda", "optimizer": "sum", "result_tag": "spatiotemporal_t1_separate_sum"},
+    {"problem": "klein_gordon_t1", "architecture": "separate_st_lda", "optimizer": "pcgrad", "result_tag": "spatiotemporal_t1_separate_gcr"},
+    {"problem": "klein_gordon_t2", "architecture": "mlp", "optimizer": "sum", "result_tag": "spatiotemporal_t2_std"},
+    {"problem": "klein_gordon_t2", "architecture": "mlp", "optimizer": "pcgrad", "result_tag": "spatiotemporal_t2_gcr"},
+    {"problem": "klein_gordon_t2", "architecture": "lda", "optimizer": "sum", "result_tag": "spatiotemporal_t2_lda"},
+    {"problem": "klein_gordon_t2", "architecture": "lda", "optimizer": "pcgrad", "result_tag": "spatiotemporal_t2_acr"},
+    {"problem": "klein_gordon_t2", "architecture": "separate_st_lda", "optimizer": "sum", "result_tag": "spatiotemporal_t2_separate_sum"},
+    {"problem": "klein_gordon_t2", "architecture": "separate_st_lda", "optimizer": "pcgrad", "result_tag": "spatiotemporal_t2_separate_gcr"},
+    {"problem": "klein_gordon_t4", "architecture": "mlp", "optimizer": "sum", "result_tag": "spatiotemporal_t4_std"},
+    {"problem": "klein_gordon_t4", "architecture": "mlp", "optimizer": "pcgrad", "result_tag": "spatiotemporal_t4_gcr"},
+    {"problem": "klein_gordon_t4", "architecture": "lda", "optimizer": "sum", "result_tag": "spatiotemporal_t4_lda"},
+    {"problem": "klein_gordon_t4", "architecture": "lda", "optimizer": "pcgrad", "result_tag": "spatiotemporal_t4_acr"},
+    {"problem": "klein_gordon_t4", "architecture": "separate_st_lda", "optimizer": "sum", "result_tag": "spatiotemporal_t4_separate_sum"},
+    {"problem": "klein_gordon_t4", "architecture": "separate_st_lda", "optimizer": "pcgrad", "result_tag": "spatiotemporal_t4_separate_gcr"}
+  ]
+}

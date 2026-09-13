@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "experiment_id": "acr-pinn-core-benchmarks-v1",
+  "result_prefix": "core_",
+  "training_policy": {
+    "learning_rate": 0.001,
+    "lr_schedule": "linear_warmup_then_cosine",
+    "lr_min": 0.0001,
+    "warmup_epochs": 100,
+    "checkpoint_policy": "fixed_final_iteration"
+  },
+  "seed_policy": {
+    "master_seed_base": 19018,
+    "init_seed_offset": 0,
+    "sample_seed_offset": 1000,
+    "optimizer_order_seed_offset": 2000,
+    "paired_runs": 5
+  },
+  "architectures": ["mlp", "lda"],
+  "optimizer_strategies": ["sum", "pcgrad"],
+  "problems": {
+    "helmholtz_1_4": {
+      "script": "helmholtz/train.py",
+      "layers": [2, 50, 50, 50, 50, 1],
+      "epochs": 100000,
+      "record_every": 1000,
+      "environment": {
+        "HELMHOLTZ_A1": 1.0, "HELMHOLTZ_A2": 4.0, "HELMHOLTZ_K": 1.0,
+        "HELMHOLTZ_NUM_F": 10000, "HELMHOLTZ_NUM_B": 400,
+        "HELMHOLTZ_DYNAMIC_SAMPLING": 1, "HELMHOLTZ_RESAMPLE_EVERY": 1,
+        "WARMUP_EPOCHS": 100
+      },
+      "samples": {"residual": 10000, "boundary": 400}
+    },
+    "klein_gordon": {
+      "script": "klein_gordon/train.py",
+      "layers": [2, 50, 50, 50, 50, 1],
+      "epochs": 100000,
+      "record_every": 1000,
+      "environment": {
+        "KLEIN_GORDON_NUM_F": 10000, "KLEIN_GORDON_NUM_B": 200,
+        "KLEIN_GORDON_NUM_IC": 200, "KLEIN_GORDON_DYNAMIC_SAMPLING": 1,
+        "KLEIN_GORDON_RESAMPLE_EVERY": 1, "WARMUP_EPOCHS": 100
+      },
+      "samples": {"residual": 10000, "boundary": 200, "initial": 200}
+    },
+    "lid_driven_cavity": {
+      "script": "lid_driven_cavity/train.py",
+      "layers": [2, 50, 50, 50, 50, 2],
+      "epochs": 100000,
+      "record_every": 1000,
+      "environment": {
+        "CAVITY_NUM_F": 1000, "CAVITY_NUM_TOP": 300, "CAVITY_NUM_WALL": 300,
+        "CAVITY_DYNAMIC_SAMPLING": 1, "CAVITY_RESAMPLE_EVERY": 1,
+        "WARMUP_EPOCHS": 100
+      },
+      "samples": {"residual": 1000, "top": 300, "wall": 300}
+    }
+  }
+}

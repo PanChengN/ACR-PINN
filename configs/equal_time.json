@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "experiment_id": "acr-pinn-equal-time-v1",
+  "result_prefix": "equal_time_",
+  "job_tag_prefix": "equal_time_helmholtz_4_4",
+  "training_policy": {
+    "learning_rate": 0.001,
+    "lr_schedule": "linear_warmup_then_cosine",
+    "lr_min": 0.0001,
+    "warmup_epochs": 100,
+    "checkpoint_policy": "wall_time_final"
+  },
+  "seed_policy": {
+    "master_seed_base": 19018,
+    "sample_seed_offset": 1000,
+    "optimizer_order_seed_offset": 2000,
+    "paired_runs": 1
+  },
+  "conditions": {
+    "std": {"architecture": "mlp", "optimizer": "sum"},
+    "gc": {"architecture": "mlp", "optimizer": "pcgrad"},
+    "mlp_param_matched": {"architecture": "mlp_param_matched", "optimizer": "sum"},
+    "lda": {"architecture": "lda", "optimizer": "sum"},
+    "acr": {"architecture": "lda", "optimizer": "pcgrad"}
+  },
+  "problems": {
+    "helmholtz_4_4": {
+      "script": "helmholtz/train.py",
+      "layers": [2, 50, 50, 50, 50, 1],
+      "epochs": 500000,
+      "record_every": 250,
+      "environment": {
+        "HELMHOLTZ_A1": 4.0,
+        "HELMHOLTZ_A2": 4.0,
+        "HELMHOLTZ_K": 1.0,
+        "HELMHOLTZ_NUM_F": 20000,
+        "HELMHOLTZ_NUM_B": 400,
+        "HELMHOLTZ_DYNAMIC_SAMPLING": 1,
+        "HELMHOLTZ_RESAMPLE_EVERY": 1,
+        "WALL_TIME_BUDGET_SEC": 2462,
+        "ERROR_THRESHOLD_L2": 0.05,
+        "WALL_TIME_CHECK_EVERY": 25,
+        "DIAGNOSTICS_EVERY": 1000000000
+      }
+    }
+  }
+}

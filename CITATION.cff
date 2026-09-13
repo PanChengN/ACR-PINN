@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the associated manuscript."
+title: "ACR-PINN"
+type: software
+authors:
+  - family-names: Niu
+    given-names: Pancheng
+  - family-names: Guo
+    given-names: Jun
+    email: junguo0407@cuit.edu.cn
+  - family-names: He
+    given-names: Qiaolin
+  - family-names: Chen
+    given-names: Yongming
+  - family-names: Shi
+    given-names: Yanchao
+license: MIT
+date-released: 2026-09-13
+preferred-citation:
+  type: article
+  title: "Architecture--Optimization Co-Design for Physics-Informed Neural Networks via Layer-wise Coordinate Adaptation and Gradient Conflict Resolution"
+  authors:
+    - family-names: Niu
+      given-names: Pancheng
+    - family-names: Guo
+      given-names: Jun
+    - family-names: He
+      given-names: Qiaolin
+    - family-names: Chen
+      given-names: Yongming
+    - family-names: Shi
+      given-names: Yanchao
+  year: 2026

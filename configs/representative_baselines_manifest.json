@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "manifest_id": "representative-baselines-v1",
+  "config": "configs/representative_baselines.json",
+  "jobs": [
+    {
+      "problem": "burgers",
+      "architecture": "modified_mlp",
+      "optimizer": "lra",
+      "result_tag": "baseline_burgers_mmlp_lra"
+    },
+    {
+      "problem": "burgers",
+      "architecture": "fourier_mlp",
+      "optimizer": "sum",
+      "result_tag": "baseline_burgers_fourier"
+    },
+    {
+      "problem": "burgers",
+      "architecture": "mlp",
+      "optimizer": "rba",
+      "result_tag": "baseline_burgers_rba"
+    },
+    {
+      "problem": "burgers",
+      "architecture": "mlp",
+      "optimizer": "brdr",
+      "result_tag": "baseline_burgers_brdr"
+    },
+    {
+      "problem": "helmholtz_4_4",
+      "architecture": "modified_mlp",
+      "optimizer": "lra",
+      "result_tag": "baseline_helmholtz_4_4_mmlp_lra"
+    },
+    {
+      "problem": "helmholtz_4_4",
+      "architecture": "fourier_mlp",
+      "optimizer": "sum",
+      "result_tag": "baseline_helmholtz_4_4_fourier"
+    },
+    {
+      "problem": "helmholtz_4_4",
+      "architecture": "mlp",
+      "optimizer": "rba",
+      "result_tag": "baseline_helmholtz_4_4_rba"
+    },
+    {
+      "problem": "helmholtz_4_4",
+      "architecture": "mlp",
+      "optimizer": "brdr",
+      "result_tag": "baseline_helmholtz_4_4_brdr"
+    }
+  ]
+}

@@ -97,9 +97,21 @@ Git. Reference inputs under `data/` remain version controlled.
 
 ## Citation
 
-If you use this code in your research, please cite the associated manuscript.
-Citation metadata are provided in `CITATION.cff` and will be updated upon
-publication.
+If you use this code in your research, please cite the associated manuscript:
+
+```bibtex
+@misc{niu2026architectureoptimizationcodesignphysicsinformedneural,
+  title={Architecture--Optimization Co-Design for Physics-Informed Neural Networks via Layer-wise Coordinate Adaptation and Gradient Conflict Resolution},
+  author={Pancheng Niu and Jun Guo and Qiaolin He and Yongming Chen and Yanchao Shi},
+  year={2026},
+  eprint={2601.12971},
+  archivePrefix={arXiv},
+  primaryClass={cs.LG},
+  url={https://arxiv.org/abs/2601.12971}
+}
+```
+
+The citation metadata are also available in `CITATION.cff`.
 
 ## License
 
